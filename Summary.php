@@ -164,35 +164,50 @@ $name = new Student();
 echo "Student Name: " .$name->name. " and the GBA is: " .$name->gba;
 echo "<br>";
 
+
 //The if statement executes some code if one condition is true.
-
-
 date_default_timezone_set('Asia/Riyadh');
 $timezone = date_default_timezone_get();
 echo "The current server timezone is: " . $timezone;
 echo "<br>";
+echo "The time currently is: " . date("h:i:sa");
+echo "<br>";
 
+
+//The if statement executes some code if one condition is true
 $t = date("h:i:sa");
 
-if ($t < "14") {
+if ($t < "17") {
     echo "Have a good day!";
 }
 echo "<br>";
 
-$now = new DateTime();
-echo $now->format('Y-m-d H:i:s');    // MySQL datetime format
+
+//The if...else statement executes some code if a condition is true and another code if that condition is false.
+$t = date("H");
+
+if ($t < "17") {
+    echo "Have a good day!";
+} else {
+    echo "Have a good night!";
+}
 echo "<br>";
 
-$date=date_create();
-echo date_timestamp_get($date);
+
+//The if...elseif...else statement executes different codes for more than two conditions.
+if ($t < "10") {
+    echo "Have a good morning!";
+} elseif ($t < "17") {
+    echo "Have a good day!";
+} else {
+    echo "Have a good night!";
+}
 echo "<br>";
 
-$date=date_create(null,timezone_open("Asia/Riyadh"));
-$tz=date_timezone_get($date);
-echo timezone_name_get($tz);
-echo "<br>";
-
-echo "The time is " . date("h:i:sa");
+//Ternary operator .. Syntax: (Condition) ? (Statement1) : (Statement2);
+$score = 10;
+$age = 20;
+echo 'Taking into account your age and score, you are: ',($age > 10 ? ($score < 80 ? 'behind' : 'above average') : ($score < 50 ? 'behind' : 'above average'));
 
 
 ?>
